@@ -1,0 +1,59 @@
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  background-color: #4e7bdb;
+  background-image: url('mulyadi-ouDz1gXoju4-unsplash.jpg'); /* Replace with your image */
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.stopwatch {
+  position: relative;
+  text-align: center;
+  background-color: rgba(168, 141, 236, 0.5);
+  padding: 20px;
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(5px);
+  animation: pulse 1s infinite;
+}
+
+.time-display {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.controls button {
+  font-size: 1rem;
+  padding: 8px 15px;
+  margin: 5px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.controls button:hover {
+  background-color: #0056b3;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
