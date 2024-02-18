@@ -2,20 +2,20 @@ const timeDisplay = document.querySelector('.time-display');
 const startBtn = document.getElementById('startBtn');
 const stopBtn = document.getElementById('stopBtn');
 const resetBtn = document.getElementById('resetBtn');
-
+//1
 let startTime;
 let intervalId;
 let elapsedTime = 0;
 let isRunning = false;
 let pauseTime = 0;
-
+//2 update display
 function updateDisplay() {
   const currentTime = Date.now();
   const deltaTime = currentTime - startTime + elapsedTime;
   const formattedTime = formatTime(deltaTime);
   timeDisplay.textContent = formattedTime;
 }
-
+//3 formating time
 function formatTime(time) {
   const date = new Date(time);
   const hours = date.getUTCHours().toString().padStart(2, '0');
@@ -24,7 +24,7 @@ function formatTime(time) {
   const milliseconds = Math.floor(date.getUTCMilliseconds() / 10).toString().padStart(2, '0');
   return `${hours}:${minutes}:${seconds}:${milliseconds}`;
 }
-
+//4 checking start timer
 function startTimer() {
   if (!isRunning) {
     if (pauseTime === 0) {
@@ -38,7 +38,7 @@ function startTimer() {
     isRunning = true;
   }
 }
-
+//5 checking stop timer
 function stopTimer() {
   if (isRunning) {
     clearInterval(intervalId);
@@ -48,7 +48,7 @@ function stopTimer() {
     isRunning = false;
   }
 }
-
+//6 checking reset timer
 function resetTimer() {
   clearInterval(intervalId);
   elapsedTime = 0;
